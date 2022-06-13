@@ -5,7 +5,6 @@ alias eoupr="sudo eopkg update-repo"
 alias eoup="sudo eopkg upgrade"
 alias eosr="eopkg search"
 alias ls="ls -A -B --color=auto"
-alias vim="nvim"
 
 bwp() {
 	bw get password "$1" | clipit
