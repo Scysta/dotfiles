@@ -7,15 +7,15 @@ local Plug = vim.fn['plug#']
 vim.call('plug#begin')
 
 -- Colorschemes
-Plug 'ghifarit53/tokyonight-vim'
+Plug "ghifarit53/tokyonight-vim"
 
 -- Functionality
-Plug 'steelsojka/pears.nvim'
-Plug 'kylechui/nvim-surround'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
-Plug ('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate' })
-Plug 'neovim/nvim-lspconfig'
+Plug "steelsojka/pears.nvim"
+Plug "kylechui/nvim-surround"
+Plug "nvim-lua/plenary.nvim"
+Plug "nvim-telescope/telescope.nvim"
+Plug ('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate' } )
+Plug "neovim/nvim-lspconfig"
 
 -- UI
 Plug 'nvim-lualine/lualine.nvim'
@@ -24,9 +24,17 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 
 vim.call('plug#end')
 
-require('nvim-surround').setup()
+
+require('nvim-surround').setup {
+	keymaps = {
+		insert = "<leader>ys",
+		visual = "<leader>S",
+		delete = "<leader>ds",
+		change = "<leader>cs"
+	}
+}
 require('pears').setup()
-require('lualine').setup()
+require('lualine').setup {}
 require('telescope').setup()
 require('indent_blankline').setup {
 	show_current_context = true,

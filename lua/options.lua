@@ -15,6 +15,7 @@ vim.opt.shiftwidth = 4
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.hidden = true
+vim.opt.termguicolors = true
 
 vim.opt.runtimepath:prepend { "/.vim" }
 vim.opt.runtimepath:append { "/.vim/after" }
@@ -22,6 +23,9 @@ vim.opt.runtimepath:append { "/.vim/after" }
 vim.o.packpath = runtimepath
 
 vim.opt.guifont = "JetBrainsMono Nerd Font:h10"
+
+-- == Colorschemes == --
+vim.g.tokyonight_style = "storm"
 
 -- == Indent-blankline == --
 
