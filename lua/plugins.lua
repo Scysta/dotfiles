@@ -8,6 +8,7 @@ vim.call('plug#begin')
 
 -- Colorschemes
 Plug "ghifarit53/tokyonight-vim"
+Plug "rebelot/kanagawa.nvim"
 
 -- Functionality
 Plug "steelsojka/pears.nvim"
@@ -18,9 +19,12 @@ Plug ('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate' } )
 Plug "neovim/nvim-lspconfig"
 
 -- UI
-Plug 'nvim-lualine/lualine.nvim'
-Plug 'kyazdani42/nvim-web-devicons'
-Plug 'lukas-reineke/indent-blankline.nvim'
+Plug "nvim-lualine/lualine.nvim"
+Plug "kyazdani42/nvim-web-devicons"
+Plug "lukas-reineke/indent-blankline.nvim"
+Plug "folke/twilight.nvim"
+Plug "folke/zen-mode.nvim"
+Plug "folke/which-key.nvim"
 
 vim.call('plug#end')
 
@@ -33,9 +37,20 @@ require('nvim-surround').setup {
 		change = "<leader>cs"
 	}
 }
+require('kanagawa').setup({})
+require("twilight").setup {}
+require("zen-mode").setup {
+	window = {
+		options = {
+			number = true,
+			relativenumber = true
+		}
+	}
+}
+require("which-key").setup {}
 require('pears').setup()
-require('lualine').setup {}
-require('telescope').setup()
+require('lualine').setup({})
+require('telescope').setup({})
 require('indent_blankline').setup {
 	show_current_context = true,
 	show_current_context_start = true
@@ -49,7 +64,7 @@ require('lspconfig').sumneko_lua.setup {
 		}
 	}
 }
-require('nvim-treesitter.configs').setup( {
+require('nvim-treesitter.configs').setup {
 	ensure_installed = { 'python', 'rust', 'lua', 'bash', 'help', 'cpp' },
 
 	highlight = {
@@ -58,7 +73,7 @@ require('nvim-treesitter.configs').setup( {
 	indent = {
 		enable = true
 	}
-} )
+}
 
 -- =============== --
 -- ===== EOF ===== --

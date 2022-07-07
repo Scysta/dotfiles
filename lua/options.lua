@@ -3,9 +3,8 @@
 -- ======================= --
 
 -- == Vanilla == --
-
-vim.opt.rnu = true
 vim.opt.number = true
+vim.opt.relativenumber = true
 vim.opt.background = "dark"
 vim.opt.showmode = false
 vim.opt.ignorecase = true
@@ -28,9 +27,11 @@ vim.opt.guifont = "JetBrainsMono Nerd Font:h10"
 vim.g.tokyonight_style = "storm"
 
 -- == Indent-blankline == --
-
 vim.g.indent_blankline_char_list = { '│', '|', '¦', '┆', '┊' }
 vim.g.indent_blankline_context_char_list = { '║', '╬', '█' }
+
+-- == Which-key == --
+vim.opt.timeoutlen = 500
 
 -- =============== --
 -- ===== EOF ===== --

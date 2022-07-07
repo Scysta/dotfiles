@@ -5,8 +5,9 @@
 require('options')
 require('mappings')
 require('plugins')
+require('neovide')
 
-vim.cmd [[colorscheme tokyonight]]
+vim.cmd [[colorscheme kanagawa]]
 
 -- =============== --
 -- ===== EOF ===== --
