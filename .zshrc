@@ -120,7 +120,7 @@ add-zsh-hook -Uz precmd rehash_precmd
 # reload .zshrc
 alias rldconf='source ~/.zshrc'
 
-# python venv
+# python 
 alias python-cg='source ~/python-cg/bin/activate'
 
 # omz
@@ -140,7 +140,10 @@ alias gcl='git clone --depth 1'
 alias gi='git init'
 alias ga='git add'
 alias gc='git commit -m'
-alias gp='git push origin master'
+alias gp='git push origin main'
+
+# neovim
+alias nvim='neovide --multigrid'
 
 # pacman 
 alias pacs='pacman_search'
@@ -168,7 +171,7 @@ function rbw_password() {
 # fzf functions
 function edit_fzf() {
   fzf -m --height=70% --preview='bat --color=always --style=numbers {}' | \
-    xargs -r /bin/nvim 
+    xargs -r neovide --multigrid
 }
 
 # cd using fzf
@@ -185,6 +188,7 @@ function pacman_search() {
     xargs -ro sudo pacman -S
 }
 
-export EDITOR=/usr/bin/nvim
+export EDITOR=nvim
+export PATH=/home/scysta/.local/bin:$PATH
 
 neofetch
