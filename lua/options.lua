@@ -33,6 +33,8 @@ vim.g.indent_blankline_context_char_list = { '║', '╬', '█' }
 -- == Which-key == --
 vim.opt.timeoutlen = 500
 
+-- == LSP == --
+
 -- =============== --
 -- ===== EOF ===== --
 -- =============== --

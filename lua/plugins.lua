@@ -11,19 +11,20 @@ Plug "ghifarit53/tokyonight-vim"
 Plug "rebelot/kanagawa.nvim"
 
 -- Functionality
-Plug "steelsojka/pears.nvim"
+--Plug "steelsojka/pears.nvim"
 Plug "kylechui/nvim-surround"
 Plug "nvim-lua/plenary.nvim"
 Plug "nvim-telescope/telescope.nvim"
-Plug ("nvim-treesitter/nvim-treesitter", { ["do"] = ":TSUpdate" } )
+Plug ("nvim-treesitter/nvim-treesitter", { ["do"] = ":TSUpdate" })
 Plug "neovim/nvim-lspconfig"
+Plug ("ms-jpq/coq_nvim", { branch = "coq" })
 
 -- UI
 Plug "nvim-lualine/lualine.nvim"
 Plug "kyazdani42/nvim-web-devicons"
 Plug "lukas-reineke/indent-blankline.nvim"
-Plug "folke/twilight.nvim"
-Plug "folke/zen-mode.nvim"
+--Plug "folke/twilight.nvim"
+--Plug "folke/zen-mode.nvim"
 Plug "folke/which-key.nvim"
 
 vim.call("plug#end")
@@ -38,41 +39,22 @@ require("nvim-surround").setup {
 	}
 }
 require("kanagawa").setup({})
-require("twilight").setup {}
-require("zen-mode").setup {
-	window = {
-		options = {
-			number = true,
-			relativenumber = true
-		}
-	}
-}
+--require("twilight").setup {}
+--require("zen-mode").setup {
+--	window = {
+--		options = {
+--			number = true,
+--			relativenumber = true
+--		}
+--	}
+--}
 require("which-key").setup {}
-require("pears").setup()
+--require("pears").setup()
 require("lualine").setup({})
 require("telescope").setup({})
 require("indent_blankline").setup {
 	show_current_context = true,
 	show_current_context_start = true
-}
-require("lspconfig").pylsp.setup {
-	settings = {
-		pylsp = {
-			plugins = {
-				pycodestyle = {
-					ignore = { "E265", "E266", "E501" }
-				}
-			}
-		}
-	}
-}
-require("lspconfig").rust_analyzer.setup {}
-require("lspconfig").sumneko_lua.setup {
-	settings = {
-		telemetry = {
-			enable = true,
-		}
-	}
 }
 require("nvim-treesitter.configs").setup {
 	ensure_installed = { "python", "rust", "lua", "bash", "help", "cpp" },

@@ -3,9 +3,10 @@
 -- =================================== --
 
 require('options')
-require('mappings')
 require('plugins')
+require('mappings')
 require('neovide')
+require("lsp")
 
 vim.cmd [[colorscheme kanagawa]]
 
