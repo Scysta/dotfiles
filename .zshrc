@@ -191,4 +191,4 @@ function pacman_search() {
 export EDITOR=nvim
 export PATH=/home/scysta/.local/bin:$PATH
 
-neofetch
+panes

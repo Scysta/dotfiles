@@ -3,7 +3,7 @@
 -- ========================== --
 
 --local kset = vim.keymap.set
-local opts = { silent=true }
+local opts = { noremap=true, silent=true }
 
 -- ===== Vanilla ===== -- 
 
@@ -41,6 +41,15 @@ vim.keymap.set("n", "<leader>fb", ":lua require('telescope.builtin').buffers()<C
 vim.keymap.set("n", "<leader>fh", ":lua require('telescope.builtin').help_tags()<CR>", opts)
 vim.keymap.set("n", "<leader>fo", ":lua require('telescope.builtin').oldfiles()<CR>", opts)
 
+-- ===== COQ ===== --
+-- Normal
+vim.g.coq_settings = {
+	keymap = {
+		jump_to_mark = "null",
+		bigger_preview = "null"
+	}
+}
+--local vim.g.coq_settings = { "keymap.bigger_preview" = null }
 
 -- ===== Twilight & Zen ===== --
 --vim.keymap.set("n", "<leader>zm", ":ZenMode<CR>")
